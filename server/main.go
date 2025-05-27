@@ -9,10 +9,11 @@ import (
 func main() {
 
 	portpt := flag.String("p", "1234", "Порт сервера")
+	RootDir := "C:\\For_network_technologies\\Working_directory"
 	flag.Parse()
 	port := *portpt
 
-	sm := NewSessionManager()
+	sm := NewSessionManager(RootDir)
 
 	listener, err := net.Listen("tcp", ":"+port)
 	if err != nil {
